@@ -1,16 +1,24 @@
 services:
+    _defaults:
+        autowire: true      # Automatically injects dependencies in your services.
+        autoconfigure: true
     simonetti.bundle.ping.lock_store:
-        class: Symfony\Component\Lock\Store\RedisStore
-        public: false
-        arguments: ["@simonetti.bundle.ping.redis"]
+        class: Simonetti\PingBundle\Lock\FileStorage
     simonetti.bundle.ping.lock_factory:
         class: Symfony\Component\Lock\Factory
         arguments: ["@simonetti.bundle.ping.lock_store"]
-        public: false
     simonetti.bundle.ping.lock:
-        class:     Symfony\Component\Lock\Lock
+        class: Symfony\Component\Lock\Lock
         factory: ['@simonetti.bundle.ping.lock_factory', createLock]
-        arguments: [""]
+        arguments: ["", null, false]
     simonetti.bundle.ping.controller.ping_action:
         class: Simonetti\PingBundle\Controller\PingAction
         arguments: ["@simonetti.bundle.ping.lock"]
+    pimonetti.pingbundle.command.lock_command:
+        class: Simonetti\PingBundle\Command\LockCommand
+        arguments: ['@simonetti.bundle.ping.lock']
+        tags: ['console.command']
+    pimonetti.pingbundle.command.ping_command:
+        class: Simonetti\PingBundle\Command\PingCommand
+        arguments: ['@simonetti.bundle.ping.lock']
+        tags: ['console.command']

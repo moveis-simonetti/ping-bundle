@@ -22,8 +22,6 @@ class SimonettiPingExtension extends Extension
 
         $definition = $container->getDefinition('simonetti.bundle.ping.lock');
         $definition->replaceArgument(0, $config['lock_name']);
-
-        $container->setAlias('simonetti.bundle.ping.redis', $config['redis']);
     }
 
 }

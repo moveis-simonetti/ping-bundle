@@ -12,7 +12,7 @@ use Symfony\Component\Lock\Key;
 use Symfony\Component\Lock\Lock;
 use Symfony\Component\Lock\Store\FlockStore;
 
-class LockCommand extends Command
+class PingCommand extends Command
 {
     /**
      * @var Lock
@@ -32,26 +32,13 @@ class LockCommand extends Command
     protected function configure()
     {
         $this
-            ->setName('ping:lock')
-            ->setDescription('Lock the Ping')
-            ->addOption(
-                'release',
-                'r',
-                InputOption::VALUE_NONE,
-                'If set, the lock will be released'
-            )
+            ->setName('ping')
+            ->setDescription('Ping')
         ;
     }
 
     protected function execute(InputInterface $input, OutputInterface $output)
     {
-        if ($input->getOption('release')) {
-            $this->lock->release();
-            $output->writeln('The lock was released.');
-            return;
-        }
-
-        $this->lock->acquire();
-        $output->writeln('The app is locked.');
+        $output->writeln($this->lock->isAcquired() ? 'The app is locked.' : 'PONG!');
     }
 }

@@ -16,9 +16,6 @@ class Configuration implements ConfigurationInterface
             ->children()
             ->scalarNode('lock_name')
             ->defaultValue('ping_bundle')
-            ->end()
-            ->scalarNode('redis')
-            ->isRequired()
             ->end();
         return $treeBuilder;
     }
