@@ -29,7 +29,7 @@ class LockCommand extends ContainerAwareCommand
     {
         $lock = $this->getContainer()->get('simonetti.bundle.ping.lock');
 
-        if ($input->hasOption('release')) {
+        if ($input->getOption('release')) {
             $lock->release();
             $output->writeln('The lock was released.');
             return;

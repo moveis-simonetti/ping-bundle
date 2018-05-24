@@ -9,7 +9,7 @@ services:
         public: false
     simonetti.bundle.ping.lock:
         class:     Symfony\Component\Lock\Lock
-        factory: ['@simonetti.bundle.ping.lock_factory', factory]
+        factory: ['@simonetti.bundle.ping.lock_factory', createLock]
         arguments: [""]
     simonetti.bundle.ping.controller.ping_action:
         class: Simonetti\PingBundle\Controller\PingAction
