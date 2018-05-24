@@ -1,8 +1,9 @@
 <?php
 namespace Simonetti\Bundle\PingBundle;
 
+use Symfony\Component\HttpKernel\Bundle\Bundle;
 
-class SimonettiPingBundle
+class SimonettiPingBundle extends Bundle
 {
 
 }

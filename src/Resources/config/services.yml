@@ -1,0 +1,15 @@
+services:
+    simonetti.bundle.ping.lock_store:
+        class: Symfony\Component\Lock\Store\SemaphoreStore
+        public: false
+    simonetti.bundle.ping.lock_factory:
+        class: Symfony\Component\Lock\Factory
+        arguments: ["@simonetti.bundle.ping.lock_store"]
+        public: false
+    simonetti.bundle.ping.lock:
+        class:     Symfony\Component\Lock\Lock
+        factory: ['@simonetti.bundle.ping.lock_factory', factory]
+        arguments: [""]
+    simonetti.bundle.ping.controller.ping_action:
+        class: Simonetti\Bundle\PingBundle\Controller\PingAction
+        arguments: ["@simonetti.bundle.ping.lock"]
