@@ -17,7 +17,6 @@ class Configuration implements ConfigurationInterface
             ->scalarNode('lock_name')
             ->defaultValue('ping_bundle')
             ->end()
-            ->children()
             ->scalarNode('redis')
             ->isRequired()
             ->end();
