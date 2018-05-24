@@ -1,5 +1,6 @@
 <?php
-namespace Simonetti\Bundle\PingBundle\DependencyInjection;
+
+namespace Simonetti\PingBundle\DependencyInjection;
 
 
 use Symfony\Component\Config\Definition\Builder\TreeBuilder;
@@ -11,10 +12,16 @@ class Configuration implements ConfigurationInterface
     {
         $treeBuilder = new TreeBuilder();
         $rootNode = $treeBuilder->root('simonetti_ping');
-        $rootNode->children()
+        $rootNode
+            ->children()
             ->scalarNode('lock_name')
             ->defaultValue('ping_bundle')
+            ->end()
+            ->children()
+            ->scalarNode('redis')
+            ->isRequired()
             ->end();
+        return $treeBuilder;
     }
 
 }

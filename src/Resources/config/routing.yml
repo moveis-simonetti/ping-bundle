@@ -1,4 +1,0 @@
-router:
-  ping_path:
-    path: /ping
-    _controller: simonetti.bundle.ping.controller.ping_action

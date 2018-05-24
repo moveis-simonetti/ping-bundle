@@ -1,13 +1,13 @@
 <?php
 
-namespace Simonetti\Bundle\PingBundle\Controller;
+namespace Simonetti\PingBundle\Controller;
 
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Lock\Lock;
 
 /**
  * Class PingAction
- * @package Simonetti\Bundle\PingBundle\Controller
+ * @package Simonetti\PingBundle\Controller
  */
 class PingAction
 {

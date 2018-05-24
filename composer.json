@@ -32,12 +32,12 @@
   },
   "autoload": {
     "psr-4": {
-      "Simonetti\\Bundle\\PingBundle\\": "src/"
+      "Simonetti\\PingBundle\\": "./"
     }
   },
   "autoload-dev": {
     "psr-4": {
-      "Simonetti\\Bundle\\PingBundle\\Tests\\": "tests/"
+      "Simonetti\\PingBundle\\Tests\\": "Tests"
     }
   },
   "extra": {

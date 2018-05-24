@@ -1,12 +1,12 @@
 <?php
-namespace Simonetti\Bundle\PingBundle\Factory;
+namespace Simonetti\PingBundle\Factory;
 
 use Symfony\Component\Lock\Factory;
 use Symfony\Component\Lock\StoreInterface;
 
 /**
  * Class LockFactory
- * @package Simonetti\Bundle\PingBundle\Factory
+ * @package Simonetti\PingBundle\Factory
  */
 class LockFactory
 {

@@ -1,5 +1,5 @@
 <?php
-namespace Simonetti\Bundle\PingBundle\DependencyInjection;
+namespace Simonetti\PingBundle\DependencyInjection;
 
 use Symfony\Component\Config\FileLocator;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
@@ -8,7 +8,7 @@ use Symfony\Component\DependencyInjection\Loader\YamlFileLoader;
 
 /**
  * Class PingExtension
- * @package Simonetti\Bundle\PingBundle\DependencyInjection
+ * @package Simonetti\PingBundle\DependencyInjection
  */
 class SimonettiPingExtension extends Extension
 {
@@ -22,6 +22,8 @@ class SimonettiPingExtension extends Extension
 
         $definition = $container->getDefinition('simonetti.bundle.ping.lock');
         $definition->replaceArgument(0, $config['lock_name']);
+
+        $container->setAlias('simonetti.bundle.ping.redis', $config['redis']);
     }
 
 }
