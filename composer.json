@@ -3,12 +3,13 @@
   "type": "symfony-bundle",
   "description": "Ping Bundle",
   "keywords": ["ping", "bundle"],
-  "homepage": "https://github.com/EasyCorp/EasyAdminBundle",
+  "homepage": "https://github.com/moveis-simonetti/ping-bundle",
   "license": "MIT",
+  "minimum-stability": "stable",
   "authors": [
     {
       "name": "Project Contributors",
-      "homepage": "https://github.com/EasyCorp/EasyAdminBundle/blob/master/CONTRIBUTORS.md"
+      "homepage": "https://github.com/moveis-simonetti/ping-bundle/graphs/contributors"
     }
   ],
   "require": {
