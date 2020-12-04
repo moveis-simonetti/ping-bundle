@@ -1,48 +1,51 @@
 {
-  "name": "simonetti/ping-bundle",
-  "type": "symfony-bundle",
-  "description": "Ping Bundle",
-  "keywords": ["ping", "bundle"],
-  "homepage": "https://github.com/moveis-simonetti/ping-bundle",
-  "license": "MIT",
-  "minimum-stability": "stable",
-  "authors": [
-    {
-      "name": "Project Contributors",
-      "homepage": "https://github.com/moveis-simonetti/ping-bundle/graphs/contributors"
+    "name": "simonetti/ping-bundle",
+    "type": "symfony-bundle",
+    "description": "Ping Bundle",
+    "keywords": [
+        "ping",
+        "bundle"
+    ],
+    "homepage": "https://github.com/moveis-simonetti/ping-bundle",
+    "license": "MIT",
+    "minimum-stability": "stable",
+    "authors": [
+        {
+            "name": "Project Contributors",
+            "homepage": "https://github.com/moveis-simonetti/ping-bundle/graphs/contributors"
+        }
+    ],
+    "require": {
+        "php": "^7.0.0|^8",
+        "symfony/config": "^5",
+        "symfony/console": "^5",
+        "symfony/framework-bundle": "^5",
+        "symfony/http-foundation": "^5",
+        "symfony/http-kernel": "^5",
+        "symfony/lock": "^5"
+    },
+    "require-dev": {
+        "psr/log": "~1.0",
+        "symfony/phpunit-bridge": "^5.2",
+        "symfony/var-dumper": "^5.2",
+        "symfony/yaml": "^5.2"
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "autoload": {
+        "psr-4": {
+            "Simonetti\\PingBundle\\": "./"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Simonetti\\PingBundle\\Tests\\": "Tests"
+        }
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-master": "1.0.x-dev"
+        }
     }
-  ],
-  "require": {
-    "php": "^7.0.0|^8",
-    "symfony/config": "^4",
-    "symfony/console": "^4",
-    "symfony/framework-bundle": "^4",
-    "symfony/http-foundation": "^4",
-    "symfony/http-kernel": "^4",
-    "symfony/lock": "^4"
-  },
-  "require-dev": {
-    "psr/log": "~1.0",
-    "symfony/phpunit-bridge": "^3.4",
-    "symfony/var-dumper": "^3.4",
-    "symfony/yaml": "^3.4"
-  },
-  "config": {
-    "sort-packages": true
-  },
-  "autoload": {
-    "psr-4": {
-      "Simonetti\\PingBundle\\": "./"
-    }
-  },
-  "autoload-dev": {
-    "psr-4": {
-      "Simonetti\\PingBundle\\Tests\\": "Tests"
-    }
-  },
-  "extra": {
-    "branch-alias": {
-      "dev-master": "1.0.x-dev"
-    }
-  }
 }
