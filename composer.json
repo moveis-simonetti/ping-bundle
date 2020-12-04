@@ -13,7 +13,7 @@
     }
   ],
   "require": {
-    "php": "^7.0.0",
+    "php": "^7.0.0|^8",
     "symfony/config": "^4",
     "symfony/console": "^4",
     "symfony/framework-bundle": "^4",
