@@ -10,8 +10,8 @@ class Configuration implements ConfigurationInterface
 {
     public function getConfigTreeBuilder()
     {
-        $treeBuilder = new TreeBuilder();
-        $rootNode = $treeBuilder->root('simonetti_ping');
+        $treeBuilder = new TreeBuilder('simonetti_ping');
+        $rootNode = $treeBuilder->getRootNode();
         $rootNode
             ->children()
             ->scalarNode('lock_name')

@@ -14,18 +14,19 @@
   ],
   "require": {
     "php": "^7.0.0|^8",
-    "symfony/config": "^4",
-    "symfony/console": "^4",
-    "symfony/framework-bundle": "^4",
-    "symfony/http-foundation": "^4",
-    "symfony/http-kernel": "^4",
-    "symfony/lock": "^4"
+    "symfony/config": "^3|^4|^5",
+    "symfony/console": "^3|^4|^5",
+    "symfony/framework-bundle": "^3|^4|^5",
+    "symfony/http-foundation": "^3|^4|^5",
+    "symfony/http-kernel": "^3|^4|^5",
+    "symfony/lock": "^3|^4|^5"
   },
   "require-dev": {
     "psr/log": "~1.0",
-    "symfony/phpunit-bridge": "^3.4",
-    "symfony/var-dumper": "^3.4",
-    "symfony/yaml": "^3.4"
+    "symfony/debug": "*",
+    "symfony/phpunit-bridge": "*",
+    "symfony/var-dumper": "*",
+    "symfony/yaml": "*"
   },
   "config": {
     "sort-packages": true
