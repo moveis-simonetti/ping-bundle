@@ -9,12 +9,14 @@ jobs:
     runs-on: 'ubuntu-latest'
     strategy:
       matrix:
-        symfony-version: ['^4', '^5', '^6']
+        symfony-version: ['^3.4', '^4', '^5', '^6']
         php-version: ['7.4', '8.0', '8.1']
         prefer: [lowest, stable]
         exclude:
           - symfony-version: '^6'
             php-version: '7.4'
+          - symfony-version: '^3.4'
+            php-version: '8.1'
 
     steps:
       - name: Setup PHP
