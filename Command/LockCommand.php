@@ -43,15 +43,16 @@ class LockCommand extends Command
         ;
     }
 
-    protected function execute(InputInterface $input, OutputInterface $output)
+    protected function execute(InputInterface $input, OutputInterface $output): int
     {
         if ($input->getOption('release')) {
             $this->lock->release();
             $output->writeln('The lock was released.');
-            return;
+            return 0;
         }
 
         $this->lock->acquire();
         $output->writeln('The app is locked.');
+        return 0;
     }
 }

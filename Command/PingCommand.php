@@ -37,8 +37,9 @@ class PingCommand extends Command
         ;
     }
 
-    protected function execute(InputInterface $input, OutputInterface $output)
+    protected function execute(InputInterface $input, OutputInterface $output): int
     {
         $output->writeln($this->lock->isAcquired() ? 'The app is locked.' : 'PONG!');
+        return 0;
     }
 }

@@ -12,10 +12,7 @@ class Configuration implements ConfigurationInterface
     {
         $name = 'simonetti_ping';
         $treeBuilder = new TreeBuilder($name);
-        $rootNode = \method_exists(TreeBuilder::class, 'getRootNode')
-            ? $treeBuilder->getRootNode()
-            : $treeBuilder->root($name);
-        $rootNode
+        $treeBuilder->getRootNode()
             ->children()
             ->scalarNode('lock_name')
             ->defaultValue('ping_bundle')

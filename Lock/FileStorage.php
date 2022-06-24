@@ -2,13 +2,14 @@
 namespace Simonetti\PingBundle\Lock;
 
 use Symfony\Component\Lock\Key;
+use Symfony\Component\Lock\PersistingStoreInterface;
 use Symfony\Component\Lock\StoreInterface;
 
 /**
  * Class FileStorage
  * @package Simonetti\PingBundle\Lock
  */
-class FileStorage implements StoreInterface
+class FileStorage implements PersistingStoreInterface
 {
     /**
      * @var string
@@ -53,9 +54,8 @@ class FileStorage implements StoreInterface
         return unlink($this->path . $key);
     }
 
-    public function exists(Key $key)
+    public function exists(Key $key): bool
     {
         return file_exists($this->path . $key);
     }
-
 }
