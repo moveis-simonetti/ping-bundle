@@ -13,17 +13,17 @@
     }
   ],
   "require": {
-    "php": "^7.0.0|^8",
-    "symfony/config": "^3|^4|^5",
-    "symfony/console": "^3|^4|^5",
-    "symfony/framework-bundle": "^3|^4|^5",
-    "symfony/http-foundation": "^3|^4|^5",
-    "symfony/http-kernel": "^3|^4|^5",
-    "symfony/lock": "^3|^4|^5"
+    "php": "^7.4|^8",
+    "symfony/config": "^4|^5|^6",
+    "symfony/console": "^4|^5|^6",
+    "symfony/framework-bundle": "^4|^5|^6",
+    "symfony/http-foundation": "^4|^5|^6",
+    "symfony/http-kernel": "^4|^5|^6",
+    "symfony/lock": "^4|^5|^6"
   },
   "require-dev": {
     "psr/log": "~1.0",
-    "symfony/debug": "*",
+    "symfony/error-handler": "*",
     "symfony/phpunit-bridge": "*",
     "symfony/var-dumper": "*",
     "symfony/yaml": "*"
