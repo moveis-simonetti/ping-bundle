@@ -2,12 +2,12 @@
 
 namespace Simonetti\PingBundle\DependencyInjection;
 
-
 use Symfony\Component\Config\Definition\Builder\TreeBuilder;
 use Symfony\Component\Config\Definition\ConfigurationInterface;
 
 class Configuration implements ConfigurationInterface
 {
+    /** @return TreeBuilder */
     public function getConfigTreeBuilder()
     {
         $name = 'simonetti_ping';
@@ -20,7 +20,7 @@ class Configuration implements ConfigurationInterface
             ->scalarNode('lock_name')
             ->defaultValue('ping_bundle')
             ->end();
+
         return $treeBuilder;
     }
-
 }
