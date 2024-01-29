@@ -1,9 +1,7 @@
 <?php
 namespace Simonetti\PingBundle\Lock;
 
-use Symfony\Component\Lock\BlockingStoreInterface;
 use Symfony\Component\Lock\Key;
-use Symfony\Component\Lock\PersistingStoreInterface;
 
 /**
  * Class FileStorage
@@ -22,36 +20,35 @@ class AbstractFileStorage
      */
     public function __construct(string $path = null)
     {
-        if (!$path) {
+        if (! $path) {
             $path = sys_get_temp_dir() . '/simonett-ping-bundle-lock-';
         }
 
         $this->path = $path;
     }
 
-
-    public function save(Key $key)
+    public function save(Key $key): void
     {
         file_put_contents($this->path . $key, 'lock');
     }
 
-    public function waitAndSave(Key $key)
+    public function waitAndSave(Key $key): void
     {
         $this->save($key);
     }
 
-    public function putOffExpiration(Key $key, $ttl)
+    public function putOffExpiration(Key $key, $ttl): void
     {
         throw new \Exception('');
     }
 
-    public function delete(Key $key)
+    public function delete(Key $key): void
     {
-        if (!$this->exists($key)){
+        if (! $this->exists($key)) {
             return;
         }
 
-        return unlink($this->path . $key);
+        unlink($this->path . $key);
     }
 
     public function exists(Key $key): bool
