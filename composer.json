@@ -2,7 +2,10 @@
   "name": "simonetti/ping-bundle",
   "type": "symfony-bundle",
   "description": "Ping Bundle",
-  "keywords": ["ping", "bundle"],
+  "keywords": [
+    "ping",
+    "bundle"
+  ],
   "homepage": "https://github.com/moveis-simonetti/ping-bundle",
   "license": "MIT",
   "minimum-stability": "stable",
@@ -26,7 +29,7 @@
     "symfony/error-handler": "*",
     "symfony/phpunit-bridge": "*",
     "symfony/var-dumper": "*",
-    "symfony/yaml": "*"
+    "symfony/yaml": "^6.4|^7"
   },
   "config": {
     "sort-packages": true
