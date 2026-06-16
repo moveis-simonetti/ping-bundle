@@ -25,7 +25,7 @@ jobs:
           ini-values: post_max_size=256M, max_execution_time=180
 
       - name: Checkout code
-        uses: actions/checkout@v2
+        uses: actions/checkout@v6
 
       - name: Install dependencies
         run: |
