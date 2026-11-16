@@ -5,27 +5,16 @@ namespace Simonetti\PingBundle\Controller;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Lock\Lock;
 
-/**
- * Class PingAction
- * @package Simonetti\PingBundle\Controller
- */
 class PingAction
 {
-    /**
-     * @var Lock
-     */
-    protected $lock;
+    protected Lock $lock;
 
-    /**
-     * PingAction constructor.
-     * @param Lock $lock
-     */
     public function __construct(Lock $lock)
     {
         $this->lock = $lock;
     }
 
-    public function __invoke()
+    public function __invoke(): Response
     {
         $status = Response::HTTP_OK;
         $content = 'PONG!';

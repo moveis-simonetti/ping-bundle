@@ -1,40 +1,23 @@
 <?php
+
 namespace Simonetti\PingBundle\Command;
 
+use Symfony\Component\Console\Attribute\AsCommand;
 use Symfony\Component\Console\Command\Command;
-use Symfony\Component\Console\Input\{
-    InputInterface, InputOption
-};
-use Symfony\Component\Console\Output\{
-    OutputInterface
-};
-use Symfony\Component\Lock\Key;
+use Symfony\Component\Console\Input\InputInterface;
+use Symfony\Component\Console\Output\OutputInterface;
 use Symfony\Component\Lock\Lock;
-use Symfony\Component\Lock\Store\FlockStore;
 
+#[AsCommand(name: 'ping', description: 'Ping')]
 class PingCommand extends Command
 {
-    /**
-     * @var Lock
-     */
-    protected $lock;
+    protected Lock $lock;
 
-    /**
-     * LockCommand constructor.
-     * @param Lock $lock
-     */
     public function __construct(Lock $lock)
     {
         parent::__construct();
-        $this->lock = $lock;
-    }
 
-    protected function configure()
-    {
-        $this
-            ->setName('ping')
-            ->setDescription('Ping')
-        ;
+        $this->lock = $lock;
     }
 
     protected function execute(InputInterface $input, OutputInterface $output): int
