@@ -16,7 +16,7 @@
     }
   ],
   "require": {
-    "php": "^8.5",
+    "php": ">=8.2",
     "symfony/config": "^7.4",
     "symfony/console": "^7.4",
     "symfony/framework-bundle": "^7.4",
