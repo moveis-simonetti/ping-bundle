@@ -12,9 +12,7 @@ use Symfony\Component\Lock\Lock;
 #[AsCommand(name: 'ping:lock', description: 'Lock the Ping')]
 class LockCommand extends Command
 {
-    protected Lock $lock;
-
-    public function __construct(Lock $lock)
+    public function __construct(protected Lock $lock)
     {
         parent::__construct();
 
