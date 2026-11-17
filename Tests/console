@@ -2,8 +2,13 @@
 <?php
 
 use Symfony\Bundle\FrameworkBundle\Console\Application;
+use Symfony\Bundle\FrameworkBundle\Kernel\MicroKernelTrait;
+use Symfony\Component\Config\Loader\LoaderInterface;
 use Symfony\Component\Console\Input\ArgvInput;
+use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\ErrorHandler\Debug;
+use Symfony\Component\HttpKernel\Kernel as BaseKernel;
+use Symfony\Component\Routing\Loader\Configurator\RoutingConfigurator;
 
 // if you don't want to setup permissions the proper way, just uncomment the following PHP line
 // read https://symfony.com/doc/current/setup.html#checking-symfony-application-configuration-and-setup
@@ -22,9 +27,9 @@ if ($debug) {
     Debug::enable();
 }
 
-class Kernel extends \Symfony\Component\HttpKernel\Kernel
+class Kernel extends BaseKernel
 {
-    use \Symfony\Bundle\FrameworkBundle\Kernel\MicroKernelTrait;
+    use MicroKernelTrait;
 
     public function registerBundles(): iterable
     {
@@ -34,15 +39,14 @@ class Kernel extends \Symfony\Component\HttpKernel\Kernel
         ];
     }
 
-    protected function configureRoutes(\Symfony\Component\Routing\RouteCollectionBuilder $routes)
+    protected function configureRoutes(RoutingConfigurator $routes): void
     {
-        $routes->import('@SimonettiPingBundle/Resources/config/routing.yml', '/ping', 'yaml');
+        $routes->import('@SimonettiPingBundle/Resources/config/routing.yml', 'yaml')->prefix('/ping');
     }
 
-    protected function configureContainer(
-        \Symfony\Component\DependencyInjection\ContainerBuilder $c, \Symfony\Component\Config\Loader\LoaderInterface $loader)
+    protected function configureContainer(ContainerBuilder $c, LoaderInterface $loader): void
     {
-        $loader->load(__DIR__.'/../Tests/config.yml');
+        $loader->load(__DIR__ . '/config.yml');
     }
 }
 

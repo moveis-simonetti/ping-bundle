@@ -1,3 +1,4 @@
 framework:
     secret: S0ME_SECRET
+    http_method_override: false
     profiler: { only_exceptions: false }

@@ -1,24 +1,14 @@
 <?php
+
 namespace Simonetti\PingBundle\Lock;
 
 use Symfony\Component\Lock\Key;
 
-/**
- * Class FileStorage
- * @package Simonetti\PingBundle\Lock
- */
 class AbstractFileStorage
 {
-    /**
-     * @var string
-     */
-    protected $path;
+    protected string $path;
 
-    /**
-     * FileStorage constructor.
-     * @param string $path
-     */
-    public function __construct(string $path = null)
+    public function __construct(?string $path = null)
     {
         if (! $path) {
             $path = sys_get_temp_dir() . '/simonett-ping-bundle-lock-';

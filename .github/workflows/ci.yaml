@@ -9,12 +9,8 @@ jobs:
     runs-on: "ubuntu-latest"
     strategy:
       matrix:
-        symfony-version: ["^6", "^7"]
-        php-version: ["8.1", "8.2"]
+        php-version: ["8.2", "8.3", "8.4", "8.5"]
         prefer: [lowest, stable]
-        exclude:
-          - symfony-version: "^7"
-            php-version: "8.1"
 
     steps:
       - name: Setup PHP
@@ -29,7 +25,6 @@ jobs:
 
       - name: Install dependencies
         run: |
-          sed -i  "s/\(symfony\/[^\"]*\)\": \"\([^\*]*\)\"/\1\": \"${{ matrix.symfony-version }}\"/" composer.json
           composer update --prefer-${{ matrix.prefer }} --prefer-dist
 
       - name: Run commands
